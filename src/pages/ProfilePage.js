@@ -1,36 +1,25 @@
-import {useEffect, useState} from 'react';
-import api from '../utils/api';
-
-import {Avatar} from '../components/common/avatar';
+import {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {asyncProfile} from '../states/profile/action';
 import {Loading} from '../components/common/loading';
+import {Avatar} from '../components/common/avatar';
 
 export const ProfilePage = () => {
-  const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const profile = useSelector((state) => state.profile);
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const user = await api.getOwnProfile();
-        setProfile(user);
-      } catch (error) {
-        alert(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+    dispatch(asyncProfile());
+  }, [dispatch]);
 
-    fetchProfile();
-  }, []);
+  if (!profile) {
+    return <Loading />;
+  }
 
   const onLogout = () => {
     localStorage.removeItem('token');
     window.location.href = '/login';
   };
-
-  if (loading) {
-    return <Loading/>;
-  }
 
   return (
     <section className="profile-page">
