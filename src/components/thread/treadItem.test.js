@@ -36,7 +36,7 @@ describe('ThreadItem component', () => {
         </MemoryRouter>,
     );
 
-    expect(screen.getByText('Belajar Testing React')).toBeInTheDocument();
+    expect(screen.getByText('Testing')).toBeInTheDocument();
     expect(screen.getByText(/Thread ini berisi/i)).toBeInTheDocument();
   });
 
