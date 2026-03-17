@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import {MemoryRouter} from 'react-router-dom';
 import {ThreadItem} from './ThreadItem';
 
-//test ci protect
+// test ci protect
 const fakeThread = {
   id: 'thread-1',
   title: 'Belajar Testing React',
@@ -24,10 +24,10 @@ describe('ThreadItem component', () => {
   it('should render thread title and body correctly', () => {
     render(
         <MemoryRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true
-        }}
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
         >
           <ThreadItem
             thread={fakeThread}
@@ -44,10 +44,10 @@ describe('ThreadItem component', () => {
   it('should render category tag when category exists', () => {
     render(
         <MemoryRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true
-        }}
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
         >
           <ThreadItem
             thread={fakeThread}
@@ -65,10 +65,10 @@ describe('ThreadItem component', () => {
 
     render(
         <MemoryRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true
-        }}
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
         >
           <ThreadItem
             thread={fakeThread}
@@ -88,10 +88,10 @@ describe('ThreadItem component', () => {
   it('should disable vote buttons when user not logged in', () => {
     render(
         <MemoryRouter
-         future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true
-        }} 
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
         >
           <ThreadItem
             thread={fakeThread}
