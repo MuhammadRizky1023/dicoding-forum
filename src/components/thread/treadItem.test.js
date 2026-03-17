@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import {MemoryRouter} from 'react-router-dom';
 import {ThreadItem} from './ThreadItem';
 
+//test ci protect
 const fakeThread = {
   id: 'thread-1',
   title: 'Belajar Testing React',
