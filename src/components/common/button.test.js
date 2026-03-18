@@ -2,6 +2,7 @@ import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import {Button} from './Button';
 
+// Test branch
 describe('Button component', () => {
   it('should render button text correctly', () => {
     render(<Button>Submit</Button>);
